@@ -1,14 +1,15 @@
 import React from 'react';
+import css from './Feedback.module.css';
 
-const Feedback = ({ options }) => {
-  console.log(options);
-
+const Feedback = ({ options, updateState }) => {
   return (
-    <ul>
+    <ul className={css.listButton}>
       {options.map(option => {
         return (
           <li key={option}>
-            <button type="button">{option}</button>
+            <button type="button" onClick={() => updateState(option)}>
+              {option}
+            </button>
           </li>
         );
       })}
